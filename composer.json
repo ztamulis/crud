@@ -1,0 +1,12 @@
+{
+    "name": "vagrant/bene",
+    "require": {},
+
+
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/",
+			"Bene\\Package\\": "packages/task/bene/src"
+		}
+	}
+}
