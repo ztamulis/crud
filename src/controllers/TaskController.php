@@ -52,16 +52,20 @@ class TaskController extends Controller
      */
     public function update(Request $request)
     {
+        $task = Task::update($request->all());
 
+        return response()->json($task, 201);
     }
 
     /**
      * Remove the specified resource from storage.
      * @param  \Bene\Crud\Controllers\Task $task
      * @return Response
+     * @throws \Exception
      */
     public function delete(Task $task)
     {
-		//
+        $task->delete();
+        return response()->json($task, 204);
     }
 }

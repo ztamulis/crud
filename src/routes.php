@@ -13,3 +13,23 @@ Route::get('tasks/{id}', function ($id) {
     return Task::find($id);
 });
 
+Route::post('tasks', function (Request $request) {
+    $data = $request->all();
+    return TASK::create([
+        'name' => $data['name'],
+        'description' => $data['description'],
+    ]);
+});
+
+Route::put('tasks/{id}', function (Request $request, $id) {
+    $task = Task::findorFail($id);
+    $task->update($request->all());
+
+    return $task;
+});
+
+Route::delete('tasks/{id}', function ($id) {
+    Task::find($id)->delete();
+
+    return 204;
+});
