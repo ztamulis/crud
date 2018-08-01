@@ -1,6 +1,6 @@
 <?php
 
-namespace Bene\Package;
+namespace Bene\Crud;
 
 use Illuminate\Support\ServiceProvider;
 
